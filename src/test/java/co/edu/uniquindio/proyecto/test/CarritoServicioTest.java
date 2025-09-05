@@ -27,9 +27,11 @@ public class CarritoServicioTest {
         ObjectId objectEvento = new ObjectId("66e5c4b6e1ef425df559016d");
         DetalleCarrito detalle = new DetalleCarrito(objectEvento, 4, "VIP");
         items.add(detalle);
+
         CrearCarritoDTO carritoDTO = new CrearCarritoDTO(
                 objectUsuario,
-                LocalDateTime.of(2024, 9, 14, 15, 30)
+                LocalDateTime.of(2024, 9, 14, 15, 30),
+                items
         );
 
         String mensaje = carritoServicio.crearCarrito(carritoDTO);
