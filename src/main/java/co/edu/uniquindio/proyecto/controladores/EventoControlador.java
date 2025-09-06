@@ -1,10 +1,7 @@
-/*
 package co.edu.uniquindio.proyecto.controladores;
 
-import co.edu.uniquindio.proyecto.dto.*;
-import co.edu.uniquindio.proyecto.dto.response.EventoResponseDto;
-import co.edu.uniquindio.proyecto.excepciones.EventoNoEditadoException;
-import co.edu.uniquindio.proyecto.servicios.implementacion.EventoServicioImpl;
+import co.edu.uniquindio.proyecto.modelo.documentos.Evento;
+import co.edu.uniquindio.proyecto.servicios.interfaces.EventoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,102 +9,27 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequiredArgsConstructor
 @RequestMapping("/api/eventos")
+@RequiredArgsConstructor
 public class EventoControlador {
 
-    private final EventoServicioImpl eventoServicio;
+    private final EventoService eventoService;
 
     @PostMapping("/crear")
-    public String createEvent(@RequestBody CrearEventoDTO evento, @RequestHeader("Authorization")String token){
-        return eventoServicio.crearEvento(evento, token);
-
-    }
-
-    @PutMapping("/editar")
-    public String editEvent(@RequestBody EditarEventoDTO editarEventoDTO,
-                            @RequestHeader("Authorization") String token) {
-        return eventoServicio.editarEvento(editarEventoDTO, token);
-    }
-
-    @DeleteMapping("/eliminar/{id}")
-    public String deleteEvent(@PathVariable String id, @RequestHeader("Authorization") String token) {
-        return eventoServicio.eliminarEvento(id, token);
-    }
-
-    @GetMapping("/{id}")
-    public ResponseEntity<InformacionEventoDTO> getEventInfo(@PathVariable String id) {
-        InformacionEventoDTO infoEvento = eventoServicio.obtenerInformacionEvento(id);
-        return ResponseEntity.ok(infoEvento);
+    public ResponseEntity<Evento> crear(@RequestBody Evento evento){
+        Evento creado = eventoService.crearEvento(evento);
+        return ResponseEntity.ok(creado);
     }
 
     @GetMapping("/todos")
-    public ResponseEntity<List<EventoResponseDto>> getAllEvents() {
-        List<EventoResponseDto> eventos = eventoServicio.obtenerEventos();
-        return ResponseEntity.ok(eventos);
-    }
-
-    @PostMapping("/filtrar")
-    public ResponseEntity<List<ItemEventoDTO>> filterEvents(@RequestBody FiltroEventoDTO filtroDTO) {
-        List<ItemEventoDTO> eventosFiltrados = eventoServicio.filtrarEventos(filtroDTO);
-        return ResponseEntity.ok(eventosFiltrados); //Pendiente el servicio
-    }
-}
-
- */
-
-package co.edu.uniquindio.proyecto.controladores;
-
-import co.edu.uniquindio.proyecto.dto.*;
-import co.edu.uniquindio.proyecto.dto.response.EventoResponseDto;
-import co.edu.uniquindio.proyecto.excepciones.EventoNoEditadoException;
-import co.edu.uniquindio.proyecto.servicios.implementacion.EventoServicioImpl;
-import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-
-@RestController
-@RequiredArgsConstructor
-@RequestMapping("/api/eventos")
-public class EventoControlador {
-
-    private final EventoServicioImpl eventoServicio;
-
-    @PostMapping("/crear")
-    public String createEvent(@RequestBody CrearEventoDTO evento) {
-        // Token deshabilitado para pruebas
-        return eventoServicio.crearEvento(evento, null);
-    }
-
-    @PutMapping("/editar")
-    public String editEvent(@RequestBody EditarEventoDTO editarEventoDTO) {
-        // Token deshabilitado para pruebas
-        return eventoServicio.editarEvento(editarEventoDTO, null);
-    }
-
-    @DeleteMapping("/eliminar/{id}")
-    public String deleteEvent(@PathVariable String id) {
-        // Token deshabilitado para pruebas
-        return eventoServicio.eliminarEvento(id, null);
+    public ResponseEntity<List<Evento>> todos(){
+        return ResponseEntity.ok(eventoService.obtenerEventos());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<InformacionEventoDTO> getEventInfo(@PathVariable String id) {
-        InformacionEventoDTO infoEvento = eventoServicio.obtenerInformacionEvento(id);
-        return ResponseEntity.ok(infoEvento);
-    }
-
-    @GetMapping("/todos")
-    public ResponseEntity<List<EventoResponseDto>> getAllEvents() {
-        List<EventoResponseDto> eventos = eventoServicio.obtenerEventos();
-        return ResponseEntity.ok(eventos);
-    }
-
-    @PostMapping("/filtrar")
-    public ResponseEntity<List<ItemEventoDTO>> filterEvents(@RequestBody FiltroEventoDTO filtroDTO) {
-        List<ItemEventoDTO> eventosFiltrados = eventoServicio.filtrarEventos(filtroDTO);
-        return ResponseEntity.ok(eventosFiltrados);
+    public ResponseEntity<Evento> porId(@PathVariable String id){
+        Evento e = eventoService.obtenerPorId(id);
+        if (e == null) return ResponseEntity.notFound().build();
+        return ResponseEntity.ok(e);
     }
 }

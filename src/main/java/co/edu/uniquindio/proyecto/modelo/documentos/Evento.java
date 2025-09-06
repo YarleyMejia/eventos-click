@@ -1,33 +1,20 @@
 package co.edu.uniquindio.proyecto.modelo.documentos;
 
-import co.edu.uniquindio.proyecto.modelo.enums.EstadoEvento;
-import co.edu.uniquindio.proyecto.modelo.enums.TipoEvento;
-import co.edu.uniquindio.proyecto.modelo.vo.Localidad;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Document("eventos")
-@Getter
-@Setter
-@NoArgsConstructor
-@ToString
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@Getter @Setter @NoArgsConstructor @AllArgsConstructor @ToString
 public class Evento {
     @Id
-    @EqualsAndHashCode.Include
     private String id;
-
     private String nombre;
     private String descripcion;
-    private String direccion;
-    private String imagenPortada;
-    private String imagenLocalidades;
-    private String ciudad;
-    private List<Localidad> localidades;
-    private TipoEvento tipo;
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime fechaEvento;
-    private EstadoEvento estado;
+    private String ciudad;
 }
