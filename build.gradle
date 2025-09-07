@@ -42,8 +42,13 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
-    compileOnly 'org.projectlombok:lombok'
-    annotationProcessor 'org.projectlombok:lombok'
+
+    // ✅ Lombok con versión
+    compileOnly 'org.projectlombok:lombok:1.18.32'
+    annotationProcessor 'org.projectlombok:lombok:1.18.32'
+    testCompileOnly 'org.projectlombok:lombok:1.18.32'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.32'
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     testImplementation 'org.mockito:mockito-junit-jupiter:5.6.0'
@@ -51,20 +56,13 @@ dependencies {
     implementation 'org.simplejavamail:simple-java-mail:8.11.2'
     implementation 'org.simplejavamail:batch-module:8.10.1'
 
-    //implementation group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat', version: '1.2.5.RELEASE' // Ese 1.2.5.RELEASE es antiquísimo (de 2015) y está entrando en conflicto con Spring Boot 3.3.2. Por eso tu aplicación no logra crear el ServletWebServerFactory.
     implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
     runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
     runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
     implementation "org.springframework.boot:spring-boot-starter-security"
 
-
     implementation 'com.google.firebase:firebase-admin:9.2.0'
-
     implementation 'com.mercadopago:sdk-java:2.1.27'
-
-    //implementation 'org.springframework.security:spring-security-crypto:6.3.3'
-
-
 
     // fuerza commons-lang3 más reciente
     implementation 'org.apache.commons:commons-lang3:3.17.0'
@@ -81,9 +79,8 @@ dependencies {
 
     // spring security actualizado
     implementation 'org.springframework.security:spring-security-crypto:6.3.4'
-
-
 }
+
 
 
 test {
