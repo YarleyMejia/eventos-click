@@ -69,6 +69,52 @@ public class EventoServicioImpl implements EventoServicio {
         }
     }
 
+
+    /*public String crearEvento(CrearEventoDTO crearEventoDTO, String token) throws EventoNoCreadoException {
+        // Si no hay token, dejamos pasar en modo pruebas
+        if (token == null) {
+            // 👇 Opcional: podrías saltar validación solo en perfil "test"
+            return crearEventoInterno(crearEventoDTO);
+        }
+
+        String roleFromToken = jwtService.getRoleFromToken(token);
+
+        if (!"admin".equals(roleFromToken)) {
+            throw new InvalidTokenException("No tiene permiso para crear eventos");
+        }
+
+        return crearEventoInterno(crearEventoDTO);
+    }
+
+    private String crearEventoInterno(CrearEventoDTO crearEventoDTO) throws EventoNoCreadoException {
+        try {
+            if (crearEventoDTO.fechaEvento().isBefore(LocalDateTime.now())) {
+                throw new EventoNoCreadoException("La fecha ingresada para el evento debe ser mayor a la fecha actual");
+            }
+
+            if (existeEvento(crearEventoDTO.fechaEvento(), crearEventoDTO.nombre(), crearEventoDTO.ciudad())) {
+                throw new EventoNoCreadoException("Ya existe un evento registrado con el nombre " +
+                        crearEventoDTO.nombre() + " para la fecha " + crearEventoDTO.fechaEvento());
+            }
+
+            Evento nuevoEvento = new Evento();
+            nuevoEvento.setFechaEvento(crearEventoDTO.fechaEvento());
+            nuevoEvento.setNombre(crearEventoDTO.nombre());
+            nuevoEvento.setDescripcion(crearEventoDTO.descripcion());
+            nuevoEvento.setEstado(EstadoEvento.ACTIVO);
+            nuevoEvento.setTipo(crearEventoDTO.tipoEvento());
+            nuevoEvento.setCiudad(crearEventoDTO.ciudad());
+            nuevoEvento.setLocalidades(crearEventoDTO.localidades());
+
+            eventoRepo.save(nuevoEvento);
+
+            return "El evento ha sido creado con éxito.";
+        } catch (Exception e) {
+            throw new EventoNoCreadoException("Error al tratar de crear el evento." + e.getMessage());
+        }
+    }
+*/
+
     @Override
     public String editarEvento(EditarEventoDTO editarEventoDTO, String token) throws EventoNoEditadoException {
 
