@@ -28,8 +28,15 @@ repositories {
     mavenCentral()
 }
 
+configurations.all {
+    exclude group: 'commons-lang', module: 'commons-lang'
+}
+
+
 
 dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
@@ -39,11 +46,12 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    testImplementation 'org.mockito:mockito-junit-jupiter:5.6.0'
 
     implementation 'org.simplejavamail:simple-java-mail:8.11.2'
     implementation 'org.simplejavamail:batch-module:8.10.1'
 
-    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat', version: '1.2.5.RELEASE'
+    //implementation group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat', version: '1.2.5.RELEASE' // Ese 1.2.5.RELEASE es antiquísimo (de 2015) y está entrando en conflicto con Spring Boot 3.3.2. Por eso tu aplicación no logra crear el ServletWebServerFactory.
     implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
     runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
     runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
@@ -54,13 +62,43 @@ dependencies {
 
     implementation 'com.mercadopago:sdk-java:2.1.27'
 
-    implementation 'org.springframework.security:spring-security-crypto:6.3.3'
+    //implementation 'org.springframework.security:spring-security-crypto:6.3.3'
+
+
+
+    // fuerza commons-lang3 más reciente
+    implementation 'org.apache.commons:commons-lang3:3.17.0'
+
+    // fuerza protobuf
+    implementation 'com.google.protobuf:protobuf-java:3.25.3'
+
+    // fuerza netty (si alguna lib lo usa)
+    implementation 'io.netty:netty-common:4.1.115.Final'
+    implementation 'io.netty:netty-handler:4.1.115.Final'
+
+    // fuerza snappy
+    implementation 'org.iq80.snappy:snappy:0.5'
+
+    // spring security actualizado
+    implementation 'org.springframework.security:spring-security-crypto:6.3.4'
+
+
 }
 
 
 test {
     useJUnitPlatform()
+
+    testLogging {
+        events "passed", "skipped", "failed"
+        exceptionFormat "full"   // Muestra stacktrace completo
+        showCauses true
+        showExceptions true
+        showStackTraces true
+        showStandardStreams = true   // 👈 muestra también System.out y System.err
+    }
 }
+
 
 
 
