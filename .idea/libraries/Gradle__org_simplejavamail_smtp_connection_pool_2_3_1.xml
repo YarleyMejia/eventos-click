@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: org.simplejavamail:smtp-connection-pool:2.3.1" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="org.simplejavamail" artifactId="smtp-connection-pool" version="2.3.1" baseVersion="2.3.1" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.simplejavamail/smtp-connection-pool/2.3.1/f16d01ec867eeb8a78b8efce261fe14d3bced162/smtp-connection-pool-2.3.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

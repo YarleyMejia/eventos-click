@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.bbottema:clustered-object-pool:2.0.3" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="com.github.bbottema" artifactId="clustered-object-pool" version="2.0.3" baseVersion="2.0.3" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.bbottema/clustered-object-pool/2.0.3/e7d3d0b45f12715a377a68569f9f8868ff1fe7c5/clustered-object-pool-2.0.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

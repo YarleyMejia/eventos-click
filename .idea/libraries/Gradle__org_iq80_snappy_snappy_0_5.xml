@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: org.iq80.snappy:snappy:0.5" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="org.iq80.snappy" artifactId="snappy" version="0.5" baseVersion="0.5" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.iq80.snappy/snappy/0.5/24815de5685d32953bfc5d925c364b95acbf4d20/snappy-0.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

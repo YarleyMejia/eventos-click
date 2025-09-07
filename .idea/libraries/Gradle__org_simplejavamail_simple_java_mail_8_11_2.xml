@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: org.simplejavamail:simple-java-mail:8.11.2" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="org.simplejavamail" artifactId="simple-java-mail" version="8.11.2" baseVersion="8.11.2" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.simplejavamail/simple-java-mail/8.11.2/a5f481ca4285845f82a7bf8c4cb7d283afd3520c/simple-java-mail-8.11.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

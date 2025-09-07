@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.edu.uniquindio.proyecto.test.CuponServicioTest" tests="12" skipped="0" failures="5" errors="0" timestamp="2025-09-07T14:39:33.792Z" hostname="YOGA-520-14IKB" time="1.964">
+  <properties/>
+  <testcase name="eliminarCuponTest()" classname="co.edu.uniquindio.proyecto.test.CuponServicioTest" time="1.408">
+    <failure message="co.edu.uniquindio.proyecto.excepciones.CuponNoEliminadoException: El cupón no pudo ser eliminado El cupón con el id 66e5c4b6e1ef425df559016d no fue encontrado" type="co.edu.uniquindio.proyecto.excepciones.CuponNoEliminadoException">co.edu.uniquindio.proyecto.excepciones.CuponNoEliminadoException: El cupón no pudo ser eliminado El cupón con el id 66e5c4b6e1ef425df559016d no fue encontrado
+	at app//co.edu.uniquindio.proyecto.servicios.implementacion.CuponServicioImpl.eliminarCupon(CuponServicioImpl.java:87)
+	at app//co.edu.uniquindio.proyecto.test.CuponServicioTest.eliminarCuponTest(CuponServicioTest.java:64)
+	at java.base@21.0.8/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base@21.0.8/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base@21.0.8/java.util.ArrayList.forEach(ArrayList.java:1596)
+</failure>
+  </testcase>
+  <testcase name="listarCuponesPorNombreFallidoTest()" classname="co.edu.uniquindio.proyecto.test.CuponServicioTest" time="0.058"/>
+  <testcase name="listarCuponesDisponiblesTest()" classname="co.edu.uniquindio.proyecto.test.CuponServicioTest" time="0.151"/>
+  <testcase name="listarTodosLosCuponesTest()" classname="co.edu.uniquindio.proyecto.test.CuponServicioTest" time="0.052">
+    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;2&gt; but was: &lt;1&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;2&gt; but was: &lt;1&gt;
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at app//org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at app//co.edu.uniquindio.proyecto.test.CuponServicioTest.listarTodosLosCuponesTest(CuponServicioTest.java:78)
+	at java.base@21.0.8/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base@21.0.8/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base@21.0.8/java.util.ArrayList.forEach(ArrayList.java:1596)
+</failure>
+  </testcase>
+  <testcase name="listarCuponesPorTipoCuponTest()" classname="co.edu.uniquindio.proyecto.test.CuponServicioTest" time="0.023"/>
+  <testcase name="actualizarCuponTest()" classname="co.edu.uniquindio.proyecto.test.CuponServicioTest" time="0.025">
+    <failure message="co.edu.uniquindio.proyecto.excepciones.CuponNoActualizadoException: El cupón no pudo ser actualizado El cupón con el id 66e5bc339693cf64dd977903 no fue encontrado" type="co.edu.uniquindio.proyecto.excepciones.CuponNoActualizadoException">co.edu.uniquindio.proyecto.excepciones.CuponNoActualizadoException: El cupón no pudo ser actualizado El cupón con el id 66e5bc339693cf64dd977903 no fue encontrado
+	at app//co.edu.uniquindio.proyecto.servicios.implementacion.CuponServicioImpl.editarCupon(CuponServicioImpl.java:72)
+	at app//co.edu.uniquindio.proyecto.test.CuponServicioTest.actualizarCuponTest(CuponServicioTest.java:57)
+	at java.base@21.0.8/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base@21.0.8/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base@21.0.8/java.util.ArrayList.forEach(ArrayList.java:1596)
+</failure>
+  </testcase>
+  <testcase name="crearCuponTest()" classname="co.edu.uniquindio.proyecto.test.CuponServicioTest" time="0.117"/>
+  <testcase name="listarCuponesPorNombreTest()" classname="co.edu.uniquindio.proyecto.test.CuponServicioTest" time="0.022">
+    <failure message="co.edu.uniquindio.proyecto.excepciones.CuponesNoEncontradosException: No se encontraron cupones en estado Disponible con el filtro aplicado." type="co.edu.uniquindio.proyecto.excepciones.CuponesNoEncontradosException">co.edu.uniquindio.proyecto.excepciones.CuponesNoEncontradosException: No se encontraron cupones en estado Disponible con el filtro aplicado.
+	at app//co.edu.uniquindio.proyecto.servicios.implementacion.CuponServicioImpl.obtenerItemsCuponesDTO(CuponServicioImpl.java:196)
+	at app//co.edu.uniquindio.proyecto.servicios.implementacion.CuponServicioImpl.listarCuponesPorNombre(CuponServicioImpl.java:158)
+	at app//co.edu.uniquindio.proyecto.test.CuponServicioTest.listarCuponesPorNombreTest(CuponServicioTest.java:93)
+	at java.base@21.0.8/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base@21.0.8/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base@21.0.8/java.util.ArrayList.forEach(ArrayList.java:1596)
+</failure>
+  </testcase>
+  <testcase name="listarCuponesPorFechaVencimientoTest()" classname="co.edu.uniquindio.proyecto.test.CuponServicioTest" time="0.008"/>
+  <testcase name="listarCuponesPorDescuentoTest()" classname="co.edu.uniquindio.proyecto.test.CuponServicioTest" time="0.035">
+    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;1&gt; but was: &lt;2&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;1&gt; but was: &lt;2&gt;
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at app//org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at app//co.edu.uniquindio.proyecto.test.CuponServicioTest.listarCuponesPorDescuentoTest(CuponServicioTest.java:117)
+	at java.base@21.0.8/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base@21.0.8/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base@21.0.8/java.util.ArrayList.forEach(ArrayList.java:1596)
+</failure>
+  </testcase>
+  <testcase name="listarCuponesPorTipoCuponFallidoTest()" classname="co.edu.uniquindio.proyecto.test.CuponServicioTest" time="0.018"/>
+  <testcase name="listarCuponesPorDescuentoFallidoTest()" classname="co.edu.uniquindio.proyecto.test.CuponServicioTest" time="0.01"/>
+  <system-out><![CDATA[09:39:27.665 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [co.edu.uniquindio.proyecto.test.CuponServicioTest]: CuponServicioTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+09:39:27.782 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration co.edu.uniquindio.proyecto.ProyectoApp for test class co.edu.uniquindio.proyecto.test.CuponServicioTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.2)
+
+2025-09-07T09:39:28.428-05:00  INFO 20731 --- [    Test worker] c.e.u.proyecto.test.CuponServicioTest    : Starting CuponServicioTest using Java 21.0.8 with PID 20731 (started by ycmejia in /home/ycmejia/Escritorio/SEMESTRE NOVENO/eventos-click)
+2025-09-07T09:39:28.432-05:00  INFO 20731 --- [    Test worker] c.e.u.proyecto.test.CuponServicioTest    : The following 1 profile is active: "default"
+2025-09-07T09:39:30.146-05:00  INFO 20731 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2025-09-07T09:39:30.227-05:00  INFO 20731 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 76 ms. Found 6 MongoDB repository interfaces.
+2025-09-07T09:39:30.865-05:00  INFO 20731 --- [    Test worker] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "5.0.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "6.14.0-29-generic"}, "platform": "Java/Amazon.com Inc./21.0.8+9-LTS"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@4c65d8e3], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@382faf51, com.mongodb.Jep395RecordCodecProvider@69ce14e6, com.mongodb.KotlinCodecProvider@699d96bc]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@b5de9ac], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null}
+2025-09-07T09:39:30.889-05:00  INFO 20731 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=24436119}
+2025-09-07T09:39:31.505-05:00  INFO 20731 --- [    Test worker] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-09-07T09:39:31.507-05:00  WARN 20731 --- [    Test worker] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-09-07T09:39:32.976-05:00  INFO 20731 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-09-07T09:39:33.683-05:00  INFO 20731 --- [    Test worker] c.e.u.proyecto.test.CuponServicioTest    : Started CuponServicioTest in 5.754 seconds (process running for 6.926)
+ItemCuponDTO[id=68bd985688470a5ce86e7955, nombre=AMOR Y AMISTAD, descuento=20.0, codigo=UT5W22AHFH, fechaVencimiento=2023-09-14T15:30]
+ItemCuponDTO[id=68bd985688470a5ce86e7955, nombre=AMOR Y AMISTAD, descuento=20.0, codigo=UT5W22AHFH, fechaVencimiento=2023-09-14T15:30]
+ItemCuponDTO[id=68bd985688470a5ce86e7955, nombre=AMOR Y AMISTAD, descuento=20.0, codigo=UT5W22AHFH, fechaVencimiento=2023-09-14T15:30]
+ItemCuponDTO[id=68bd985688470a5ce86e7955, nombre=AMOR Y AMISTAD, descuento=20.0, codigo=UT5W22AHFH, fechaVencimiento=2023-09-14T15:30]
+ItemCuponDTO[id=68bd9927521b0b7ec1daed25, nombre=AMOR Y AMISTAD, descuento=20.0, codigo=7VM30JTG4F, fechaVencimiento=2023-09-14T15:30]
+]]></system-out>
+  <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (/home/ycmejia/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.14.18/417558ea01fe9f0e8a94af28b9469d281c4e3984/byte-buddy-agent-1.14.18.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+</testsuite>
