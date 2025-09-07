@@ -1,5 +1,5 @@
-package co.edu.uniquindio.proyecto.configuracion.security;/*
 package co.edu.uniquindio.proyecto.configuracion.security;
+
 
 import co.edu.uniquindio.proyecto.configuracion.security.jwt.JWTAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
@@ -11,7 +11,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-
+/*
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
