@@ -63,3 +63,9 @@ bin/
 /src/main/resources/application.properties
 
 
+# Archivos de Gradle que no deberían versionarse
+.gradle/
+build/
+*.lock
+
+
