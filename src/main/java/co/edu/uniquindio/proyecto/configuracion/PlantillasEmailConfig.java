@@ -2,9 +2,27 @@ package co.edu.uniquindio.proyecto.configuracion;
 
 import org.springframework.stereotype.Component;
 
-@Component
+/**
+ * Clase de configuración para almacenar plantillas de correos electrónicos.
+ *
+ * Contiene HTML predefinido para enviar mensajes de bienvenida o activación
+ * de cuenta a los usuarios.
+ */
+@Component // Marca la clase como un componente de Spring para inyección de dependencias
 public class PlantillasEmailConfig {
 
+    /**
+     * Plantilla de correo electrónico para la creación de cuenta.
+     *
+     * Contiene HTML estilizado con CSS inline y clases para mostrar:
+     * - Mensaje de bienvenida
+     * - Código de activación
+     *
+     * Se recomienda reemplazar los placeholders:
+     * - [Nombres] por el nombre del usuario
+     * - [Apellidos] por el apellido del usuario
+     * - [Codigo_Activacion] por el código generado
+     */
     public static final String bodyCreacionCuenta = "<!DOCTYPE html>\n" +
             "<html lang=\"es\">\n" +
             "<head>\n" +

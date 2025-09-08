@@ -13,16 +13,32 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
-@RequiredArgsConstructor
-@RequestMapping("/api/cupones")
+/**
+ * Controlador REST para la gestión de cupones.
+ *
+ * Proporciona endpoints para listar y consultar cupones.
+ */
+@RestController // Marca la clase como controlador REST
+@RequiredArgsConstructor // Genera constructor con los campos final automáticamente
+@RequestMapping("/api/cupones") // Prefijo común para todos los endpoints del controlador
 public class CuponControlador {
 
+    // Servicio que contiene la lógica de negocio de cupones
     private final CuponServicio cuponServicio;
 
+    /**
+     * Endpoint para listar todos los cupones, sin importar su estado.
+     *
+     * @return MensajeDTO con la lista de ItemCuponDTO
+     * @throws CuponesNoEncontradosException si no se encuentran cupones
+     */
     @GetMapping("/listar-todos")
-    @Operation(summary = "Todos los Cupones", description = "Permite obtener todos los cupones independientemente de su estado")
+    @Operation(
+            summary = "Todos los Cupones",
+            description = "Permite obtener todos los cupones independientemente de su estado"
+    )
     public ResponseEntity<MensajeDTO<List<ItemCuponDTO>>> listarCuponesTodos() throws CuponesNoEncontradosException {
-        return ResponseEntity.ok().body( new MensajeDTO<>( false, cuponServicio.listarCupones()));
+        // Se construye el cuerpo de la respuesta usando MensajeDTO
+        return ResponseEntity.ok().body(new MensajeDTO<>(false, cuponServicio.listarCupones()));
     }
 }

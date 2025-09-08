@@ -11,35 +11,48 @@ import io.swagger.v3.oas.models.security.SecurityScheme;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+/**
+ * Configuración de Swagger/OpenAPI para documentar la API REST.
+ *
+ * Define información general del proyecto, contacto, licencia,
+ * documentación externa y esquema de seguridad JWT.
+ */
+@Configuration // Marca la clase como configuración de Spring
 public class SwaggerConfig {
 
+    /**
+     * Configura y expone el bean OpenAPI para generar la documentación de Swagger.
+     *
+     * @return Objeto OpenAPI configurado con información del proyecto y seguridad
+     */
     @Bean
     public OpenAPI proyectoEventosOpenAPI() {
         return new OpenAPI()
+                // Información general de la API
                 .info(new Info()
-                        .title("API - Proyecto Eventos Click")
-                        .description("Documentación de la API para gestión de eventos.")
-                        .version("1.0.0")
-                        .contact(new Contact()
+                        .title("API - Proyecto Eventos Click") // Título del proyecto
+                        .description("Documentación de la API para gestión de eventos.") // Descripción
+                        .version("1.0.0") // Versión de la API
+                        .contact(new Contact() // Información de contacto
                                 .name("Equipo de Desarrollo UQ")
                                 .email("josey.beltranm@uqvirtual.edu.co")
                         )
-                        .license(new License()
+                        .license(new License() // Licencia del proyecto
                                 .name("Licencia Apache 2.0")
                                 .url("http://springdoc.org")))
+                // Documentación externa (GitHub)
                 .externalDocs(new ExternalDocumentation()
                         .description("Repositorio GitHub")
                         .url("https://github.com/YarleyMejia/eventos-click.git"))
-                // 🔐 Seguridad con JWT
+                // 🔐 Configuración de seguridad con JWT (Bearer)
                 .addSecurityItem(new SecurityRequirement().addList("Bearer Authentication"))
                 .components(new Components()
-                        .addSecuritySchemes("Bearer Authentication",
+                        .addSecuritySchemes("Bearer Authentication", // Nombre del esquema
                                 new SecurityScheme()
-                                        .name("Authorization")
-                                        .type(SecurityScheme.Type.HTTP)
-                                        .scheme("bearer")
-                                        .bearerFormat("JWT")
+                                        .name("Authorization") // Nombre del encabezado HTTP
+                                        .type(SecurityScheme.Type.HTTP) // Tipo HTTP
+                                        .scheme("bearer") // Esquema Bearer
+                                        .bearerFormat("JWT") // Formato JWT
                         )
                 );
     }
