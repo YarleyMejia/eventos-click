@@ -1,4 +1,4 @@
-/*
+
 package co.edu.uniquindio.proyecto.controladores;
 
 import co.edu.uniquindio.proyecto.dto.*;
@@ -54,8 +54,9 @@ public class EventoControlador {
     }
 }
 
- */
 
+
+/*
 package co.edu.uniquindio.proyecto.controladores;
 
 import co.edu.uniquindio.proyecto.dto.*;
@@ -111,3 +112,5 @@ public class EventoControlador {
         return ResponseEntity.ok(eventosFiltrados);
     }
 }
+
+ */
