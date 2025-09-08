@@ -2,3 +2,17 @@ URLs que debes probar
 
     Swagger UI:  http://localhost:8082/swagger-ui/index.html
 
+Verifica que esté corriendo el back en
+ http://localhost:8082 (puedes abrir en el navegador
+ http://localhost:8082/actuator/health
+  para comprobar que esté “UP”).
+CREDENCIALES DE ADMIN
+{
+  "email": "admin@uq.edu.co",
+  "password": "admin123"
+}
+
+ Verifica que esté corriendo el back en
+ http://localhost:8082 (puedes abrir en el navegador
+ http://localhost:8082/actuator/health
+  para comprobar que esté “UP”).
