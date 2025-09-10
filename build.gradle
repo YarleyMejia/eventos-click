@@ -11,10 +11,10 @@ description = 'Proyecto de eventos'
 
 
 java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
+    sourceCompatibility = '21'
+    targetCompatibility = '21'
     }
-}
+
 
 
 configurations {
@@ -86,18 +86,7 @@ dependencies {
 }
 
 
-test {
-    useJUnitPlatform()
 
-    testLogging {
-        events "passed", "skipped", "failed"
-        exceptionFormat "full"   // Muestra stacktrace completo
-        showCauses true
-        showExceptions true
-        showStackTraces true
-        showStandardStreams = true   // 👈 muestra también System.out y System.err
-    }
-}
 
 
 

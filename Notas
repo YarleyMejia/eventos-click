@@ -16,3 +16,6 @@ CREDENCIALES DE ADMIN
  http://localhost:8082 (puedes abrir en el navegador
  http://localhost:8082/actuator/health
   para comprobar que esté “UP”).
+
+MONGO ATLAS
+    mongodb+srv://<db_username>:<db_password>@cluster0.u3dl0ov.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
