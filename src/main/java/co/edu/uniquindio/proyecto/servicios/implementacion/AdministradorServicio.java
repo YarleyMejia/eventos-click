@@ -28,14 +28,25 @@ public class AdministradorServicio {
     private final PasswordEncoder passwordEncoder;
 
     public TokenRespuesta login(LoginRequestDto loginRequestDto) {
-        authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginRequestDto.getEmail(), loginRequestDto.getPassword()));
+        authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(
+                        loginRequestDto.getEmail(),
+                        loginRequestDto.getPassword()
+                )
+        );
+
         UserEntity user = userRepository.findByEmail(loginRequestDto.getEmail());
         String token = jwtService.getToken(user);
+
         return TokenRespuesta.builder()
                 .token(token)
                 .role(user.getRole().getName())
+                .name(user.getName())
+                .lastname(user.getLastname())
+                .email(user.getEmail())
                 .build();
     }
+
 
     public UserResponseDto update(UserInformationUpdateDto userUpdate, String token) {
 

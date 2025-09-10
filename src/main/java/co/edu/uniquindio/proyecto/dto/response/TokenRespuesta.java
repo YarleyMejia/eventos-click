@@ -1,16 +1,18 @@
 package co.edu.uniquindio.proyecto.dto.response;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 public class TokenRespuesta {
 
-    String token;
-    String role;
+    private String token;
+    private String role;
+    private String name;
+    private String lastname;
+    private String email;
 }
